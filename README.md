@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# What is React ?
+<img align="left" width="70" height="70" src="https://www.w3schools.com/whatis/img_react.jpg">
+&nbsp;&nbsp;React is a JavaScript library created by Facebook.</br>
+&nbsp;&nbsp;React is a User Interface (UI) library. <br>
+&nbsp;&nbsp;React is a tool for building UI components.
+<br><br><br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# What is this Application ?
 
-## Available Scripts
+This project is a News Application to display various news from all over the World and makes the user updated with every latest news. All the news is fetched using a news API.
 
-In the project directory, you can run:
+## Project Screen Shots
+<hr><br>
+<img  width="800"  src="https://user-images.githubusercontent.com/107469214/196516733-c79160f8-44bd-4b53-b68b-8a245a9f6c71.png">
 
-### `npm start`
+<br><br>
+## API 
+APIs are mechanisms that enable two software components to communicate with each other using a set of definitions and protocols. For example, the weather bureau's software system contains daily weather data. The weather app on your phone “talks” to this system via APIs and shows you daily weather updates on your phone.
+<br><br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# How to Contibute in this project ?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. Firstly, fork the Repository. This will make an exact copy of the original repository into your Github Account.
 
-### `npm test`
+2. Copy the URL of the Repository by clickling on a Code button.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Create a new folder in your PC and then open the folder in VS code.
+4. Now, Open VS code Terminal and execute the `git clone [URL]` command. 
+5. You can now make changes in the project. 
+6. After making changes, execute the `git add .` command.
+7. Then execute `git commnit -m "message"`.
+8. Execute `git push` command and this will push the code to your repository.
+9. Now you can create a new pull/merge request from your Github login.
+10. Wait for the Owner to accept your pull/merge request
+<br><br>
 
-### `npm run build`
+# Website is deployed on Vercel
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## What is Vercel ?
+Vercel is the platform for frontend developers, providing the speed and reliability innovators need to create at the moment of inspiration. We enable teams to iterate quickly and develop, preview, and ship delightful user experiences.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<h2 align="center">THANK YOU ! </h2>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
