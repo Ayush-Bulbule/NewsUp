@@ -21,12 +21,12 @@ const NewsScreen = () => {
     
   return (
     <>
-    <h1 className="mt-8 text-center text-3xl font-bold">NewsUp</h1>
+    <h1 className="mt-8 text-center text-4xl font-[roman] ">NEWS UP</h1>
     <SearchBox/>
     {
         isLoading?<h1>Loading.....</h1>:
         data.articles.map((news)=>{
-            return <NewsItem title={news.title}/>
+            return <NewsItem title={news.title} description={news.description} img={news.urlToImage} name={news.source.name} publishedAt={news.publishedAt}/>
         })
     }
     <NewsItem/>

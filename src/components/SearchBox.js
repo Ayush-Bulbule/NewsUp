@@ -7,7 +7,7 @@ const SearchBox = () => {
             >
                 <form
                     action=""
-                    className="focus-within:ring-2 w-100  focus-within:ring-rose-500 flex justify-between rounded-full shadow-lg bg-white"
+                    className="focus-within:ring-2 w-100 focus-within:ring-rose-500 flex justify-between rounded-full shadow-lg bg-white"
                 >
                     <input
                         type="email"
