@@ -2,15 +2,22 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import NewsItem from '../components/NewsItem'
 import SearchBox from '../components/SearchBox'
+import Navbar from '../components/Navbar'
 
+
+
+
+const apiKey = process.env.REACT_APP_API_KEY
 
 const NewsScreen = () => {
 
   const [data, setData] = useState(null)
+
   const [isLoading, setIsLoading] = useState(true)
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
-    axios.get("https://newsapi.org/v2/top-headlines?country=in&apiKey=9f20b8ebd7644893be19ad62e1232cb9")
+    axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`)
       .then((res) => {
         console.log(res.data)
         setIsLoading(false)
@@ -19,20 +26,43 @@ const NewsScreen = () => {
       )
   }, [])
 
-  return (
-    <>
-      <h1 className="mt-8 text-center text-4xl font-[roman] ">NEWS UP</h1>
-      <SearchBox />
-      {
-        isLoading ? <h1 className='text-center text-xl py-4'>Loading.....</h1> :
-          data.articles.map((news) => {
-            return <NewsItem title={news.title} description={news.description} img={news.urlToImage} name={news.source.name} publishedAt={news.publishedAt} />
-          })
+  const handleInputChange = (event) => {
+    setQuery(event.target.value);
+  }
+  const searchNews = (event) => {
+    axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`)
+      .then((res) => {
+        console.log(res.data)
+        setIsLoading(false)
+        return setData(res.data)
       }
-      <NewsItem />
+      );
+  }
 
 
-    </>
+  return (
+    <div className='max-w-screen'>
+
+      <Navbar />
+      <div className="min-h-screen bg-slate-800">
+        <div className="items-center justify-center flex p-6">
+          <SearchBox onInputChange={handleInputChange} onButtonClick={searchNews}/>
+
+
+        </div>
+        {
+          data ? (data.articles.map((data, i) => {
+            return (
+              <NewsItem key={i} img={data.urlToImage} url={data.url} title={data.content} description={data.description} publishedAt={data.publishedAt} name={data.source.name} />
+            )
+          })) : (
+            <p>Loading......</p>
+          )
+        }
+      </div>
+
+    </div>
+
   )
 }
 
