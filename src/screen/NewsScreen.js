@@ -4,7 +4,6 @@ import NewsItem from '../components/NewsItem'
 import SearchBox from '../components/SearchBox'
 import Navbar from '../components/Navbar'
 import Loading from '../components/Loading'
-import cors from 'cors'
 
 
 const apiKey = process.env.REACT_APP_API_KEY
@@ -21,7 +20,6 @@ const NewsScreen = () => {
       'Referrer-Policy': 'strict-origin-when-cross-origin',
     },
   });
-  instance.use(cors())
 
   useEffect(() => {
     instance.get(`/top-headlines?country=in&apiKey=${apiKey}`,{
