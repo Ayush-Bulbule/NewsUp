@@ -3,6 +3,7 @@ import axios from 'axios'
 import NewsItem from '../components/NewsItem'
 import SearchBox from '../components/SearchBox'
 import Navbar from '../components/Navbar'
+import Loading from '../components/Loading'
 
 
 
@@ -15,9 +16,15 @@ const NewsScreen = () => {
 
   const [isLoading, setIsLoading] = useState(true)
   const [query, setQuery] = useState("");
+  const instance = axios.create({
+    baseURL: `https://newsapi.org/v2`,
+    headers: {
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+    },
+  });
 
   useEffect(() => {
-    axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`)
+    instance.get(`/top-headlines?country=in&apiKey=${apiKey}`)
       .then((res) => {
         console.log(res.data)
         setIsLoading(false)
@@ -30,7 +37,7 @@ const NewsScreen = () => {
     setQuery(event.target.value);
   }
   const searchNews = (event) => {
-    axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`)
+    instance.get(`/everything?q=${query}&apiKey=${apiKey}`)
       .then((res) => {
         console.log(res.data)
         setIsLoading(false)
@@ -56,7 +63,9 @@ const NewsScreen = () => {
               <NewsItem key={i} img={data.urlToImage} url={data.url} title={data.content} description={data.description} publishedAt={data.publishedAt} name={data.source.name} />
             )
           })) : (
-            <p>Loading......</p>
+            <div className="flex justify-center items-center">
+              <Loading/>
+            </div>
           )
         }
       </div>
