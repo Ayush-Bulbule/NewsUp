@@ -6,6 +6,8 @@ import Navbar from '../components/Navbar'
 import Loading from '../components/Loading'
 
 
+
+
 const apiKey = process.env.REACT_APP_API_KEY
 
 const NewsScreen = () => {
@@ -14,19 +16,9 @@ const NewsScreen = () => {
 
   const [isLoading, setIsLoading] = useState(true)
   const [query, setQuery] = useState("");
-  const instance = axios.create({
-    baseURL: `https://newsapi.org/v2`,
-    headers: {
-      'Referrer-Policy': 'strict-origin-when-cross-origin',
-    },
-  });
 
   useEffect(() => {
-    instance.get(`/top-headlines?country=in&apiKey=${apiKey}`,{
-      headers: {
-        'Referrer-Policy': 'strict-origin-when-cross-origin',
-      },
-    })
+    axios.get(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`)
       .then((res) => {
         console.log(res.data)
         setIsLoading(false)
@@ -39,11 +31,7 @@ const NewsScreen = () => {
     setQuery(event.target.value);
   }
   const searchNews = (event) => {
-    instance.get(`/everything?q=${query}&apiKey=${apiKey}`,{
-      headers: {
-        'Referrer-Policy': 'strict-origin-when-cross-origin',
-      },
-    })
+    axios.get(`https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`)
       .then((res) => {
         console.log(res.data)
         setIsLoading(false)
