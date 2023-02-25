@@ -24,7 +24,11 @@ const NewsScreen = () => {
   });
 
   useEffect(() => {
-    instance.get(`/top-headlines?country=in&apiKey=${apiKey}`)
+    instance.get(`/top-headlines?country=in&apiKey=${apiKey}`,{
+      headers: {
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+      },
+    })
       .then((res) => {
         console.log(res.data)
         setIsLoading(false)
@@ -37,7 +41,11 @@ const NewsScreen = () => {
     setQuery(event.target.value);
   }
   const searchNews = (event) => {
-    instance.get(`/everything?q=${query}&apiKey=${apiKey}`)
+    instance.get(`/everything?q=${query}&apiKey=${apiKey}`,{
+      headers: {
+        'Referrer-Policy': 'strict-origin-when-cross-origin',
+      },
+    })
       .then((res) => {
         console.log(res.data)
         setIsLoading(false)
