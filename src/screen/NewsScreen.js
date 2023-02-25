@@ -24,6 +24,10 @@ const NewsScreen = () => {
         setIsLoading(false)
         return setData(res.data)
       }
+      ).catch((error)=>{
+
+        console.log(error)
+      }
       )
   }, [])
 
